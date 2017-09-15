@@ -1,17 +1,19 @@
 package ua.company.epam.dao.connection;
 
+import org.apache.log4j.Logger;
+
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.ResourceBundle;
 
 /**
  * Created by Владислав on 05.09.2017.
  */
 public class JDBCConnectionPool {
+private Logger log = null;
     private String url;
     private String user;
     private String password;
@@ -19,7 +21,11 @@ public class JDBCConnectionPool {
 
 
     private JDBCConnectionPool() {
-        this.url = "jdbc:mysql://localhost:3306/epamproject";
+        log = Logger.getRootLogger();
+
+
+
+        this.url = "jdbc:mysql://localhost:3306/epamproject?autoReconnect=true&useSSL=false";
         this.user = "root";
         this.password = "root";
         this.maxConn = 10;
@@ -44,13 +50,13 @@ public class JDBCConnectionPool {
             try{
                 if (connection.isClosed()){
                   connection = getConnection();
-                    System.out.println("closed bad connection");
+                  log.debug("closed bad connection");
                 }
             } catch (SQLException e) {
-                System.out.println("closed bad connection");
+                log.debug("closed bad connection");
                 connection = getConnection();
             }catch (Exception e) {
-                System.out.println("closed bad connection");
+                log.debug("closed bad connection");
                 connection = getConnection();
             }
         }else connection = newConnection();
@@ -65,9 +71,9 @@ public class JDBCConnectionPool {
         else {
             connection = DriverManager.getConnection(url,user,password);
         }
-            System.out.println("Created new connection!");
+            log.info("Created new connection "  +connection.toString());
         } catch (SQLException e) {
-            System.out.println("Cant create connection fo this " + url);
+            log.error("Cant create connection fo this " + url);
             }
       return connection;
     }
@@ -92,9 +98,9 @@ public class JDBCConnectionPool {
 
             try {
                 connection.close();
-                System.out.println("Closed connection");
+                log.info("Closed connection" + connection.toString());
             } catch (SQLException e) {
-                System.out.println("Cant close connection");
+                log.error("Cant close connection");
             }
         }
         freeConnections.clear();
@@ -105,7 +111,9 @@ public class JDBCConnectionPool {
     private void loadDrivers() {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
+            log.info("Downloaded mysql.jdbc.Driver.");
         } catch (InstantiationException e) {
+            log.error("Error in downloading mysql driver " + e.getMessage());
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -115,8 +123,9 @@ public class JDBCConnectionPool {
         try {
             Driver driver = new com.mysql.jdbc.Driver();
             DriverManager.registerDriver(driver);
+            log.info("Driver registered in Driver Manager.");
         } catch (Exception e) {
-            System.out.println("Cant register jdbc driver.");
+            log.error("Cant register jdbc driver.");
         }
     }
 
