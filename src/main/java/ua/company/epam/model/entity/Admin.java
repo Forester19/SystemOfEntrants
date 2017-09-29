@@ -1,9 +1,9 @@
-package ua.company.epam.model;
+package ua.company.epam.model.entity;
 
 /**
  * Created by Владислав on 03.09.2017.
  */
-public class Admin extends Entity{
+public class Admin implements Identified<String>{
     private String login;
     private String password;
 
@@ -11,6 +11,14 @@ public class Admin extends Entity{
     public Admin(String login, String password) {
         this.login = login;
         this.password = password;
+    }
+
+    public Admin() {
+    }
+
+    @Override
+    public String getPK() {
+        return login;
     }
 
     public String getLogin() {
@@ -51,4 +59,6 @@ public class Admin extends Entity{
                 ", password='" + password + '\'' +
                 '}';
     }
+
+
 }

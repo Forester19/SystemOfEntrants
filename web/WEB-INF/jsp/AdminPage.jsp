@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="ua.company.epam.model.Questionnaire" %>
+<%@ page import="ua.company.epam.model.entity.User" %>
 <%@ page import="java.sql.SQLException" %>
 
 
@@ -28,17 +28,10 @@
 <hr/>
 
         Questionnaires (check entrants to sheet):<br/>
-   <jsp:useBean id ="questionnairesBean" class="ua.company.epam.dao.implementations.QuestionnaireDAOImpl"/>
 
-   <jsp:setProperty name="questionnairesBean" property="*"/>
 
    <form method="get" action="adminAddQuestionnaireToSheet">
-   <% List<Questionnaire> list = null;
-       try {
-       list = questionnairesBean.getAll();
-   } catch (SQLException e) {
-       e.printStackTrace();
-   }%>
+
        <table>
     <tr><th>Check</th>
     <th>First Name</th>
@@ -48,19 +41,7 @@
     <th>Math scope</th>
     <th>Ukrainian lang scope</th>
 
-    </tr>
-       <%for (int i=0; i<list.size();i++){%>
 
-       <tr>
-           <td><input type="checkbox" name="questionnaire" value="<%list.get(i).getFirstName();%>"> </td>
-           <td>      <%= list.get(i).getFirstName()%></td>
-           <td><%= list.get(i).getLastName()%></td>
-           <td><%= list.get(i).getEmail()%></td>
-           <td><%= list.get(i).getFaculty()%></td>
-           <td><%= list.get(i).getMathScope()%></td>
-           <td><%= list.get(i).getUkrainianLangScope()%></td>
-       </tr>
-       <%}%>
 
        </table>
 

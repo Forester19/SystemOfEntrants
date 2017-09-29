@@ -1,4 +1,4 @@
-package ua.company.epam.dao.connection;
+package ua.company.epam.model.dao.connection;
 
 import org.apache.log4j.Logger;
 

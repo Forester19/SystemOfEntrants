@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <html>
   <head>
     <title>Hello Welcome!!!</title>
@@ -35,11 +37,11 @@
   <body bgcolor="#a9a9a9">
 
   <marquee behavior="alternate" direction="right"><h1>Welcome in the best system of entrants!!! </h1></marquee>
-
   <hr/>
   <br/>
   <p align="center" style="color:#3f41ff; font-size:30px">If you first time here...</p>
   <form action="adminSignUp" method="get">
+    <input type="hidden" name="command" value="REG_BY_USER">
   <input type="submit" value="Registration for enrollee..."/>
   </form>
 
@@ -48,8 +50,10 @@
   <p align="center" style="color:#3f41ff; font-size:30px">If you admin...</p>
 
 
-  <form onsubmit="readInputs()" action="adminSignUp" method="post" class="login">
+  <form onsubmit="readInputs()" action="defaultPage" method="post" class="login">
 
+
+    <input type="hidden" name="command" value="ADMINS_SIGN_IN">
     <p>
       <label for="login">Логин:</label>
       <input type="text" name="login" id="login" value="name@example.com">

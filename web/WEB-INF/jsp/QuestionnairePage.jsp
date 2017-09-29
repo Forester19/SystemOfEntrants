@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="ua.company.epam.model.Faculty" %><%--
+<%@ page import="ua.company.epam.model.entity.Faculty" %><%--
   Created by IntelliJ IDEA.
   User: Владислав
   Date: 03.09.2017
@@ -35,14 +35,12 @@
         <input type="email" name="email" id="email" value="">
     </p>
    <br/>
+    <p>
+        <label for="faculty">Faculty:</label>
+        <input type="" name="faculty" id="faculty" value="">
+    </p>
 
-    <%List list = (List) request.getAttribute("faculties");%>
-     <select name="facultet">
-         <% int count = list.size(); %>>
-         <%for(int i=0;i<count;i++){%>
-         <option value="<%=list.get(i)%>" + i><%=list.get(i)%></option>
-         <%}%>
-    </select>
+
     <br/>
     <p>
         <label for="mathScope">Math Scope:</label>
