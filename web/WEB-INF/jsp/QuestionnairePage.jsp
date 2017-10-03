@@ -1,5 +1,9 @@
 <%@ page import="java.util.List" %>
-<%@ page import="ua.company.epam.model.entity.Faculty" %><%--
+<%@ page import="ua.company.epam.model.entity.Faculty" %>
+<%@ page import="ua.company.epam.model.entity.Subject" %>
+<%@ page import="ua.company.epam.model.entity.additional.FacultyAndSubjects" %>
+
+<%--
   Created by IntelliJ IDEA.
   User: Владислав
   Date: 03.09.2017
@@ -7,6 +11,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<jsp:useBean id="faculties" class="ua.company.epam.model.dao.impl.FacultiesDAO" scope="session"/>
+<jsp:useBean id="subjects" class="ua.company.epam.model.dao.impl.SubjectDAO" scope="session"/>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>SignUpPage</title>
@@ -16,12 +24,13 @@
 <br/>
 <hr/>
 
- Registration page for intrant
+ Registration page for enrollees
 
 <br/>
 <hr/>
 
-<form action="questionareAction" method="post">
+<form action="usersRegistration" method="post">
+    <input type="hidden" name="command" value="FORM_BY_USER">
     <p>
         <label for="firstName">First Name:</label>
         <input type="text" name="firstName" id="firstName" value="">
@@ -36,26 +45,44 @@
     </p>
    <br/>
     <p>
-        <label for="faculty">Faculty:</label>
-        <input type="" name="faculty" id="faculty" value="">
-    </p>
+        Faculty:
+        <select name="mySelect">
+            <c:forEach var ="fac" items ="${faculties.all}">
+               <option value="${fac.PK}"> <c:out value="${fac.name}" /> </option>
+            </c:forEach>
+        </select>
 
-
-    <br/>
-    <p>
-        <label for="mathScope">Math Scope:</label>
-        <input type="number" max="200" min="100" name="mathScope" id="mathScope" value="100">
-    </p>
-
-    <p>
-        <label for="langScope">Math Scope:</label>
-        <input type="number" max="200" min="100" name="langScope" id="langScope" value="100">
-    </p>
-
-    <p>
-        <input type="submit" name="submit" value="Submit">
-    </p>
+<p>
+    Mark 1: <input type="number" name="mark1" id="mark1" min="100" max="200" />
+    Mark 2: <input type="number" name="mark2" id="mark2" min="100" max="200"/>
+    Mark 3: <input type="number" name="mark3" id="mark3" min="100" max="200"/>
+</p>
+<input type="submit" value="Submit">
 
 </form>
+
+<p align="center"> <H2>Faculties - subjects mapping</H2></p>
+
+<table cellspacing="2" border="1" cellpadding="5" width="600">
+    <tr>
+        <td>Faculty</td>
+        <td>Subject 1</td>
+        <td>Subject 2</td>
+        <td>Subject 3</td>
+    </tr>
+
+
+    <%    for (FacultyAndSubjects facultyAndSubjects: faculties.showFacultetsAndSubjects()){       %>
+        <tr>
+            <td> <%= facultyAndSubjects.getFaculty()%></td>
+            <td> <%= facultyAndSubjects.getSubject1().getSubjectTitle()%></td>
+            <td> <%= facultyAndSubjects.getSubject2().getSubjectTitle()%></td>
+            <td> <%= facultyAndSubjects.getSubject3().getSubjectTitle()%></td>
+        </tr>
+    <%}%>
+
+</table>
+
+
 </body>
 </html>

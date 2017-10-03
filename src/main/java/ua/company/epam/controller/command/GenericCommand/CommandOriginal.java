@@ -1,4 +1,4 @@
-package ua.company.epam.controller.command;
+package ua.company.epam.controller.command.GenericCommand;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

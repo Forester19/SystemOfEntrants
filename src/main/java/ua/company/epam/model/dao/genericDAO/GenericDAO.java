@@ -1,4 +1,4 @@
-package ua.company.epam.model.dao.mustHaveForDAO;
+package ua.company.epam.model.dao.genericDAO;
 
 import java.util.List;
 

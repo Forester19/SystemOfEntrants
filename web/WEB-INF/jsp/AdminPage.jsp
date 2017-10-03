@@ -1,9 +1,17 @@
 <%@ page import="java.util.List" %>
 <%@ page import="ua.company.epam.model.entity.User" %>
 <%@ page import="java.sql.SQLException" %>
+<%@ page import="ua.company.epam.model.entity.Faculty" %>
+<%@ page import="ua.company.epam.model.entity.additional.ModelOfUserForShow" %>
+<%@ page import="ua.company.epam.bl.view.ShowUsersInfo" %>
+<%@ page import="ua.company.epam.model.dao.impl.UserDAO" %>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<jsp:useBean id="information" class="ua.company.epam.bl.view.ShowUsersInfo"/>
 <html>
 <head>
     <title>Admin Page</title>
@@ -12,41 +20,54 @@
    Hello admin  ${admin} its your page.
    <br/>
    <hr/>
-
+<form action="startBL" method="get">
+    <input type="hidden" name="command" value="START_BL">
+    <input type="submit" name="startBL" value="Start BL">
+</form>
    <br/>
    <hr/>
 
-   <h3>If you want add new faculty:</h3>
-   <form name="f1" method="post" action="adminPageAddFaculty">
-       Description: <br />
-       <input name="description" type="text" size="25" maxlength="30" value="DescriptionOfFaculty" /> <br />
-       Max count of Students: <br />
-       <input name="maxCount" type="text" size="25" maxlength="30" value="Max Count" /> <br />
-       <input type="submit" name="submit" value="Submit" />
-   </form>
-<br/>
-<hr/>
-
         Questionnaires (check entrants to sheet):<br/>
-
 
    <form method="get" action="adminAddQuestionnaireToSheet">
 
-       <table>
-    <tr><th>Check</th>
+       <input type="hidden" name="command" value="ADD_USER_TO_SHEET">
+
+       <table cellspacing="2" border="1" cellpadding="5" width="600">
+    <tr>
+        <th>Check</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Email</th>
     <th>Faculty</th>
-    <th>Math scope</th>
-    <th>Ukrainian lang scope</th>
-
-
-
+    <th>Scope_1</th>
+    <th>Scope_2</th>
+    <th>Scope_3</th>
+    </tr>
+           <%
+               UserDAO userDAO = new UserDAO();
+            ShowUsersInfo showUsersInfo = new ShowUsersInfo();
+            List<ModelOfUserForShow> modelOfUserForShow = showUsersInfo.showInfo(); %>
+        <% for (ModelOfUserForShow modelOfUserForShow1 : modelOfUserForShow){
+        User user = userDAO.getById(userDAO.getPKByName(modelOfUserForShow1.getFn()));
+            if(!user.isNoted_by_admin()){%>
+           <tr>
+               <td> <input type="checkbox" name="noting" value="<%=modelOfUserForShow1.getFn()%>"></td>
+            <td> <%=modelOfUserForShow1.getFn()%></td>
+            <td> <%=modelOfUserForShow1.getLn()%></td>
+            <td> <%=modelOfUserForShow1.getEmail()%></td>
+            <td> <%=modelOfUserForShow1.getFac() %></td>
+            <td> <%=modelOfUserForShow1.getMarkVal1()%></td>
+            <td> <%=modelOfUserForShow1.getMarkVal2()%></td>
+            <td> <%=modelOfUserForShow1.getMarkVal3()%></td>
+        </tr>
+           <%}
+           }%>
        </table>
-
        <br/>
-             <input type="submit" value="Submit">
+       <p>
+           <input type="submit" name="Submit" value="Submit">
+       </p>
    </form>
 
 

@@ -4,12 +4,28 @@ package ua.company.epam.model.entity;
  * Created by Владислав on 25.09.2017.
      Entity which persist object from DB
  */
-public class User_Marks implements Identified<Integer>{
+public class Marks implements Identified<Integer>{
     private int user_id;
     private int mark_1;
     private int mark_2;
     private int mark_3;
 
+
+    public Marks(int mark_1, int mark_2, int mark_3) {
+        this.mark_1 = mark_1;
+        this.mark_2 = mark_2;
+        this.mark_3 = mark_3;
+    }
+
+    public Marks(int user_id, int mark_1, int mark_2, int mark_3) {
+        this.user_id = user_id;
+        this.mark_1 = mark_1;
+        this.mark_2 = mark_2;
+        this.mark_3 = mark_3;
+    }
+
+    public Marks() {
+    }
 
     public int getUser_id() {
         return user_id;

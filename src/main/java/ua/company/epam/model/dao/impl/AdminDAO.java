@@ -1,6 +1,6 @@
 package ua.company.epam.model.dao.impl;
 
-import ua.company.epam.model.dao.mustHaveForDAO.AbstractJDBCDao;
+import ua.company.epam.model.dao.genericDAO.AbstractJDBCDao;
 import ua.company.epam.model.entity.Admin;
 
 import java.sql.PreparedStatement;

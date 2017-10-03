@@ -31,6 +31,10 @@ public class Faculty implements Identified<Integer>{
         super();
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public Integer getPK() {
         return id;

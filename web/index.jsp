@@ -40,7 +40,9 @@
   <hr/>
   <br/>
   <p align="center" style="color:#3f41ff; font-size:30px">If you first time here...</p>
-  <form action="adminSignUp" method="get">
+
+
+  <form action="usersRegistration" method="get">
     <input type="hidden" name="command" value="REG_BY_USER">
   <input type="submit" value="Registration for enrollee..."/>
   </form>
@@ -50,7 +52,7 @@
   <p align="center" style="color:#3f41ff; font-size:30px">If you admin...</p>
 
 
-  <form onsubmit="readInputs()" action="defaultPage" method="post" class="login">
+  <form onsubmit="readInputs()" action="adminSignUp" method="post" class="login">
 
 
     <input type="hidden" name="command" value="ADMINS_SIGN_IN">

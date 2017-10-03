@@ -1,4 +1,4 @@
-package ua.company.epam.model.dao.mustHaveForDAO;
+package ua.company.epam.model.dao.genericDAO;
 
 import org.apache.log4j.Logger;
 import ua.company.epam.model.dao.connection.JDBCConnectionPool;
@@ -59,11 +59,11 @@ public abstract class AbstractJDBCDao<T> implements GenericDAO<T> {
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             prepareStatemantForInsert(preparedStatement,object);
             preparedStatement.executeUpdate();
-            logger.info("Insert into db new Admin " + object.toString());
+            logger.info("Insert into db new object "+ object.toString());
 
         } catch (SQLException e) {
             e.printStackTrace();
-            logger.error("error in inserting of admin " + e );
+            logger.error("error in inserting of object" + e );
         }
     }
 
@@ -71,11 +71,10 @@ public abstract class AbstractJDBCDao<T> implements GenericDAO<T> {
 
     @Override
     public T getById(int key) {
-
         Connection connection = getConnectionFromPool();
         List<T> list = null;
         String sql_query = getSelectQuery();
-        sql_query += "where id = ?";
+        sql_query += " where id = ? ";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql_query)) {
             preparedStatement.setInt(1, key);
             ResultSet rs = preparedStatement.executeQuery();
@@ -94,6 +93,7 @@ public abstract class AbstractJDBCDao<T> implements GenericDAO<T> {
     public void update(T object){
 
     };
+
 
     public List<T> getAll() {
         Connection connection = getConnectionFromPool();
@@ -128,7 +128,7 @@ public abstract class AbstractJDBCDao<T> implements GenericDAO<T> {
 
     }
 
-    private Connection getConnectionFromPool() {
+    protected Connection getConnectionFromPool() {
         Connection connection;
         jdbcConnectionPool = JDBCConnectionPool.getInstanceConnectionPool();
         connection = jdbcConnectionPool.getConnection();
