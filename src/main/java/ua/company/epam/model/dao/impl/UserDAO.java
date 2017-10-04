@@ -2,6 +2,7 @@ package ua.company.epam.model.dao.impl;
 
 import ua.company.epam.model.dao.genericDAO.AbstractJDBCDao;
 import ua.company.epam.model.entity.User;
+import ua.company.epam.model.entity.additional.User_Mark;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -121,6 +122,32 @@ public class UserDAO extends AbstractJDBCDao<User> {
                e.printStackTrace();
            }
        }
+   }
+   public List<User_Mark> joinTablesUsersMarks(){
+       String query = "Select * from users JOIN users_marks ON users.id = users_marks.user_id JOIN marks ON users_marks.marks_id = marks.id ORDER BY AVG(mark_1, mark_2, mark_3) DESC ";
+       PreparedStatement preparedStatement = null;
+       List<User_Mark> list = new ArrayList<>();
+       ResultSet resultSet = null;
+       User_Mark user_mark = null;
+       try(Connection connection = getConnectionFromPool()) {
+       preparedStatement = connection.prepareStatement(query);
+       resultSet =preparedStatement.executeQuery();
+       while (resultSet.next()){
+           user_mark = new User_Mark(resultSet.getString("first_name"),
+                   resultSet.getString("second_name"),
+                   resultSet.getString("email"),
+                   resultSet.getInt("facultet_id"),
+                   resultSet.getBoolean("noted_by_admin"),
+                   resultSet.getBoolean("successful_entry"),
+                   resultSet.getInt("mark_1"),
+                   resultSet.getInt("mark_2"),
+                   resultSet.getInt("mark_3") );
+           list.add(user_mark);
+       }
+       } catch (SQLException e) {
+           e.printStackTrace();
+       }
+       return list;
    }
 
 }

@@ -24034,3 +24034,371 @@ faculties
 
 [INFO] 11:00:05 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@3d70ae9 
 
+[INFO] 09:55:41 (DefaultServlet.java:process:41)handling query from client:  ADD_USER_TO_SHEET 
+
+[INFO] 09:55:41 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:41 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:41 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@6fe9e0f4 
+
+[INFO] 09:55:41 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:41 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:41 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@60df810e 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@26af4bd3 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@7c787c8b 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@5284c976 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:42 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@374d0f9a 
+
+[INFO] 09:55:43 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:43 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:43 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@4d1a3c8e 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@2d483f14 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@251ddf2f 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@3c7c7ccd 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:44 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@28f4a4ff 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@5cda92d3 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@1d80e98f 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@73c9dbb0 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:45 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@51a129d9 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@1bea3a31 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@56b8e849 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@740e7f40 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@433d91eb 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@2983cc55 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@60e478cd 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:46 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@5530fa27 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@6e6001dd 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@21ee0eba 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@1408a19e 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@7039604c 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@1ecb0e2f 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@110823fb 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@6281558e 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@6e3f4182 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@50a9690 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@74a02ae5 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@da86890 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@26585559 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@2a5a3f19 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@77815836 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@6d3ba4a2 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@452802ae 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@71b2b34c 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@5a8b875e 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@6c417f6d 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@23c447a1 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@3b8f2679 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@4b151f9e 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@5e91a75f 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:47 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@37d3137b 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@7e3e34a6 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@7f8839c2 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@70f1a694 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@50d4c353 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@33ae3d59 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@3b305377 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@6805af7d 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@57863176 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@498210ef 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:48 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@22eedc5e 
+
+[INFO] 09:55:57 (DefaultServlet.java:process:41)handling query from client:  START_BL 
+
+[INFO] 09:55:57 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:55:57 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:55:57 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@b96c317 
+
+[INFO] 09:58:07 (DefaultServlet.java:process:41)handling query from client:  START_BL 
+
+[INFO] 09:58:07 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 09:58:07 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 09:58:07 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@6827ee82 
+
+[INFO] 10:06:34 (DefaultServlet.java:process:41)handling query from client:  START_BL 
+
+[INFO] 10:06:34 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 10:06:34 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 10:06:34 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@2402a52b 
+
+[INFO] 10:06:35 (JDBCConnectionPool.java:loadDrivers:114)Downloaded mysql.jdbc.Driver. 
+
+[INFO] 10:06:35 (JDBCConnectionPool.java:loadDrivers:126)Driver registered in Driver Manager. 
+
+[INFO] 10:06:35 (JDBCConnectionPool.java:newConnection:74)Created new connection com.mysql.jdbc.JDBC4Connection@6d515c9a 
+
