@@ -16,6 +16,7 @@ public class CommandProvider {
         commands.put(CommandEnum.FORM_BY_USER,new ExecutionFormByUser());
         commands.put(CommandEnum.ADD_USER_TO_SHEET,new AddingUserToSheet());
         commands.put(CommandEnum.START_BL,new StartBL());
+        commands.put(CommandEnum.SEND_MASSAGES,new MailServlet());
     }
 
     public CommandOriginal getCommand(String nameCommand) {

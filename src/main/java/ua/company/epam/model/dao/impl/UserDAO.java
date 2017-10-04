@@ -124,7 +124,7 @@ public class UserDAO extends AbstractJDBCDao<User> {
        }
    }
    public List<User_Mark> joinTablesUsersMarks(){
-       String query = "Select * from users JOIN users_marks ON users.id = users_marks.user_id JOIN marks ON users_marks.marks_id = marks.id ORDER BY AVG(mark_1, mark_2, mark_3) DESC ";
+       String query = "Select * from users JOIN users_marks ON users.id = users_marks.user_id JOIN marks ON users_marks.marks_id = marks.id ORDER BY (mark_1+ mark_2 + mark_3)/3 DESC ";
        PreparedStatement preparedStatement = null;
        List<User_Mark> list = new ArrayList<>();
        ResultSet resultSet = null;
@@ -148,6 +148,17 @@ public class UserDAO extends AbstractJDBCDao<User> {
            e.printStackTrace();
        }
        return list;
+   }
+
+   public void markUserAsSuccessfulEntryToFaculty(User student){
+       String query = "UPDATE  epamproject.users SET users.successful_entry = 1 ";
+       PreparedStatement preparedStatement = null;
+       try(Connection connection = getConnectionFromPool()) {
+         preparedStatement = connection.prepareStatement(query);
+         preparedStatement.executeUpdate();
+       } catch (SQLException e) {
+           e.printStackTrace();
+       }
    }
 
 }

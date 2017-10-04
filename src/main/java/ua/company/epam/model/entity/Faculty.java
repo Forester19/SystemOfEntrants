@@ -80,10 +80,16 @@ public class Faculty implements Identified<Integer>{
         this.maxCountOfStudents = maxCountOfStudents;
     }
 
+
     @Override
     public String toString() {
-        return name;
+        return "Faculty{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", maxCountOfStudents=" + maxCountOfStudents +
+                ", subject1=" + subject1 +
+                ", subject2=" + subject2 +
+                ", subject3=" + subject3 +
+                '}';
     }
-
-
 }

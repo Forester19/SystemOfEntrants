@@ -1,19 +1,25 @@
 package ua.company.epam.bl.view;
 
+import ua.company.epam.bl.MainBL;
 import ua.company.epam.model.dao.impl.FacultiesDAO;
 import ua.company.epam.model.dao.impl.MarksDAO;
 import ua.company.epam.model.dao.impl.UserDAO;
+import ua.company.epam.model.entity.Faculty;
 import ua.company.epam.model.entity.User;
 import ua.company.epam.model.entity.additional.ModelOfUserForShow;
+import ua.company.epam.model.entity.additional.User_Mark;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by Владислав on 02.10.2017.
  */
 public class ShowUsersInfo {
+    private MainBL mainBL = new MainBL();
     private UserDAO userDAO = new UserDAO();
     private MarksDAO marksDAO = new MarksDAO();
     private FacultiesDAO facultiesDAO = new FacultiesDAO();
@@ -36,5 +42,4 @@ public class ShowUsersInfo {
         }
         return list;
     }
-
 }

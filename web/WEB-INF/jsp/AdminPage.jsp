@@ -27,6 +27,15 @@
    <br/>
    <hr/>
 
+   <form action="MailForm" method="POST">
+       <input type="hidden" name="command" value="SEND_MASSAGES">
+
+       <input type="submit" value="Send messages for students!"/>
+   </form>
+
+
+       <br/>
+       <hr/>
         Questionnaires (check entrants to sheet):<br/>
 
    <form method="get" action="adminAddQuestionnaireToSheet">
