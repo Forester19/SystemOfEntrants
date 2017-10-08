@@ -2,10 +2,10 @@ package adminDaoTest;
 
 import org.junit.Assert;
 import org.junit.Test;
-import ua.company.epam.model.dao.impl.MarksDAO;
-import ua.company.epam.model.dao.impl.UserDAO;
-import ua.company.epam.model.entity.Marks;
-import ua.company.epam.model.entity.User;
+import ua.company.model.dao.impl.MarksDAO;
+import ua.company.model.dao.impl.UserDAO;
+import ua.company.model.entity.Marks;
+import ua.company.model.entity.User;
 
 import java.sql.SQLException;
 

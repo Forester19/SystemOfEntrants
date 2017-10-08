@@ -2,8 +2,8 @@ package adminDaoTest;
 
 import org.junit.Assert;
 import org.junit.Test;
-import ua.company.epam.model.dao.impl.AdminDAO;
-import ua.company.epam.model.entity.Admin;
+import ua.company.model.dao.impl.AdminDAO;
+import ua.company.model.entity.Admin;
 
 /**
  * Created by Владислав on 22.09.2017.

@@ -2,7 +2,7 @@ package adminDaoTest;
 
 import org.junit.Assert;
 import org.junit.Test;
-import ua.company.epam.model.dao.impl.UserDAO;
+import ua.company.model.dao.impl.UserDAO;
 
 /**
  * Created by Владислав on 02.10.2017.

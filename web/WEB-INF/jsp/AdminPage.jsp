@@ -1,17 +1,17 @@
 <%@ page import="java.util.List" %>
-<%@ page import="ua.company.epam.model.entity.User" %>
+<%@ page import="ua.company.model.entity.User" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ page import="ua.company.epam.model.entity.Faculty" %>
-<%@ page import="ua.company.epam.model.entity.additional.ModelOfUserForShow" %>
-<%@ page import="ua.company.epam.bl.view.ShowUsersInfo" %>
-<%@ page import="ua.company.epam.model.dao.impl.UserDAO" %>
+<%@ page import="ua.company.model.entity.Faculty" %>
+<%@ page import="ua.company.model.entity.additional.ModelOfUserForShow" %>
+<%@ page import="ua.company.bl.view.ShowUsersInfo" %>
+<%@ page import="ua.company.model.dao.impl.UserDAO" %>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<jsp:useBean id="information" class="ua.company.epam.bl.view.ShowUsersInfo"/>
+<jsp:useBean id="information" class="ua.company.bl.view.ShowUsersInfo"/>
 <html>
 <head>
     <title>Admin Page</title>

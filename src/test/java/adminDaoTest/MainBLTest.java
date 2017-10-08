@@ -1,13 +1,7 @@
 package adminDaoTest;
 
-import org.junit.Assert;
 import org.junit.Test;
-import ua.company.epam.bl.MainBL;
-import ua.company.epam.model.entity.Faculty;
-import ua.company.epam.model.entity.additional.User_Mark;
-
-import java.util.List;
-import java.util.Map;
+import ua.company.bl.MainBL;
 
 /**
  * Created by Владислав on 04.10.2017.

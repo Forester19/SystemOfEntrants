@@ -1,7 +1,7 @@
 <%@ page import="java.util.List" %>
-<%@ page import="ua.company.epam.model.entity.Faculty" %>
-<%@ page import="ua.company.epam.model.entity.Subject" %>
-<%@ page import="ua.company.epam.model.entity.additional.FacultyAndSubjects" %>
+<%@ page import="ua.company.model.entity.Faculty" %>
+<%@ page import="ua.company.model.entity.Subject" %>
+<%@ page import="ua.company.model.entity.additional.FacultyAndSubjects" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -11,8 +11,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="faculties" class="ua.company.epam.model.dao.impl.FacultiesDAO" scope="session"/>
-<jsp:useBean id="subjects" class="ua.company.epam.model.dao.impl.SubjectDAO" scope="session"/>
+<jsp:useBean id="faculties" class="ua.company.model.dao.impl.FacultiesDAO" scope="session"/>
+<jsp:useBean id="subjects" class="ua.company.model.dao.impl.SubjectDAO" scope="session"/>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
