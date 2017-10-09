@@ -25,7 +25,7 @@ public class StartBL implements CommandOriginal {
 
         Map<Faculty, List<User>> map =  mainBL.markUserAsStudent();
                httpRequest.setAttribute("students",map);
-               httpRequest.getRequestDispatcher("WEB-INF/jsp/Students.jsp").forward(httpRequest,httpResponse);
+               httpRequest.getRequestDispatcher("WEB-INF/jsp/SuccessfulResultBL.jsp").forward(httpRequest,httpResponse);
 
     }
 

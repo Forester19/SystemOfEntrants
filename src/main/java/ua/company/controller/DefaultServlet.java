@@ -15,7 +15,7 @@ import java.io.IOException;
  * Created by Владислав on 25.09.2017.
  */
 @WebServlet(name = "DefaultServlet", urlPatterns = {"/controller", "/adminSignUp","/usersRegistration","/usersForm","/adminAddQuestionnaireToSheet",
-"/startBL","/MailFormк"})
+"/startBL","/MailForm"})
 public class DefaultServlet extends HttpServlet {
 
     private Logger logger = Logger.getRootLogger();

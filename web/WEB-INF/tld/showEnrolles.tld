@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee">
+    <tlib-version>1.0</tlib-version>
+    <short-name>Enrolle</short-name>
+    <uri>/WEB-INF/tdl/showEnrolles</uri>
+    <tag>
+        <name>ShowEnrollesTag</name>
+        <tag-class>ua.company.bl.view.TagForShowEnrolles</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>User</name>
+            <required>true</required>
+            <description>User for showing </description>
+        </attribute>
+        <attribute>
+            <name>Model</name>
+            <required>true</required>
+        </attribute>
+    </tag>
+</taglib>

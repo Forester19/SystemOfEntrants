@@ -106,14 +106,6 @@ public class User implements Identified<Integer>{
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", faculty_id=" + faculty_id +
-                ", noted_by_admin=" + noted_by_admin +
-                ", successful_entry=" + successful_entry +
-                '}';
+        return id +" " + firstName + " " + lastName + " "+email +" " +faculty_id;
     }
 }
