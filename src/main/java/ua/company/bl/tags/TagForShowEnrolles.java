@@ -1,6 +1,5 @@
-package ua.company.bl.view;
+package ua.company.bl.tags;
 
-import ua.company.model.dao.impl.UserDAO;
 import ua.company.model.entity.User;
 import ua.company.model.entity.additional.ModelOfUserForShow;
 
@@ -8,7 +7,6 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by Владислав on 09.10.2017.

@@ -56,4 +56,5 @@ public class Users_MarksDAO extends AbstractJDBCDao<Users_Marks> {
     protected void prepareStatemantForDelete(PreparedStatement statement, Users_Marks object) {
 
     }
+
 }

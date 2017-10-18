@@ -7,7 +7,7 @@
     <uri>/WEB-INF/tdl/showEnrolles</uri>
     <tag>
         <name>ShowEnrollesTag</name>
-        <tag-class>ua.company.bl.view.TagForShowEnrolles</tag-class>
+        <tag-class>ua.company.bl.tags.TagForShowEnrolles</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>User</name>

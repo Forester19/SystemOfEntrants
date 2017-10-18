@@ -13,10 +13,11 @@ import java.sql.SQLException;
  * Created by Владислав on 03.10.2017.
  */
 public class MarksDAOTest {
+    MarksDAO marksDAO = new MarksDAO();
+    UserDAO userDAO = new UserDAO();
+
     @Test
     public void getMarksByUserTest(){
-        MarksDAO marksDAO = new MarksDAO();
-        UserDAO userDAO = new UserDAO();
         User user = userDAO.getById(25);
 
         System.out.println(user.getFirstName());
@@ -28,5 +29,12 @@ public class MarksDAOTest {
             e.printStackTrace();
         }
 
+    }
+
+    @Test
+    public void persist(){
+        Marks  marks = new Marks(145,187,165);
+        int id = marksDAO.persist(marks);
+        Assert.assertEquals(id,14);
     }
 }

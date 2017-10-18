@@ -19,6 +19,8 @@ private Logger log = null;
     private String password;
     private int maxConn;
 
+    public static int connectionCount=0;
+
 
     private JDBCConnectionPool() {
         log = Logger.getRootLogger();
@@ -38,8 +40,11 @@ private Logger log = null;
 
     public static synchronized JDBCConnectionPool getInstanceConnectionPool(){
         if (instance == null){
+         connectionCount++;
             return new JDBCConnectionPool();
         }
+
+        connectionCount++;
         return instance;
     }
     public synchronized Connection getConnection(){
@@ -129,4 +134,7 @@ private Logger log = null;
         }
     }
 
+    public static int getConnectionCount() {
+        return connectionCount;
+    }
 }

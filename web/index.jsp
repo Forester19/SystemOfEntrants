@@ -24,13 +24,9 @@
           if(document.forms[0].elements[0].value ==""){
               alert("Null fields (login or password)")
               return false;
-          }
-          else{
+          } else{
               alert("Identificated))")
-              return true;
-          }
-
-      }
+              return true;}}
     </script>
 
   </head>
@@ -53,19 +49,15 @@
 
 
   <form onsubmit="readInputs()" action="adminSignUp" method="post" class="login">
-
-
-    <input type="hidden" name="command" value="ADMINS_SIGN_IN">
+    <input type="hidden" name="command" value="ADMINS_SIGN_UP">
     <p>
       <label for="login">Логин:</label>
       <input type="text" name="login" id="login" value="name@example.com">
     </p>
-
     <p>
       <label for="password">Пароль:</label>
       <input type="password" name="password" id="password" value="4815162342">
     </p>
-
     <p class="login-submit">
       <button type="submit" class="login-button">Войти</button>
     </p>

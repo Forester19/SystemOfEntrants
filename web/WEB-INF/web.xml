@@ -10,4 +10,13 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+
+    <description>MySQL DataSource</description>
+    <resource-ref>
+        <res-ref-name>jdbc/epamproject</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
 </web-app>

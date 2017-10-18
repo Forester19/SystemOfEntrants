@@ -46,39 +46,28 @@ public class ExecutionFormByUser implements CommandOriginal {
             if (user.equals(userFromDB) || user.getEmail().isEmpty())canInsert = false;
         }
 
-        if (userDAO.getAll() != null){
-           if(canInsert){
-               redirection(user,marks,req,resp);
-               insertInUsers_MarksDB(user,marks);
-           }else{
-               req.getRequestDispatcher("WEB-INF/jsp/ErrorExistUserPage.jsp").forward(req,resp);
-
-           }
-
-        }else{
-          redirection(user,marks, req,resp);
-          insertInUsers_MarksDB(user,marks);
+        if (canInsert) {
+            insertUsersAndMarks(user,marks);
+            req.getRequestDispatcher("WEB-INF/jsp/SuccessfulRegistration.jsp").forward(req, resp);
+        }else {
+            req.getRequestDispatcher("WEB-INF/jsp/ErrorExistUserPage.jsp").forward(req, resp);
         }
 
+          int userId = userDAO.getPKByName(user.getFirstName());
+          int marksId = _marksDAO.persist(marks);
+          Users_Marks users_marks = new Users_Marks(userId,marksId);
+          users_marksDAO.insert(users_marks);
 
+
+          //users_marksDAO.insert(new Users_Marks(userId,marksId));
     }
 
-    private void redirection(User user, Marks marks, HttpServletRequest req, HttpServletResponse resp) {
+    private void insertUsersAndMarks(User user, Marks marks) {
         _marksDAO.insert(marks);
         userDAO.insert(user);
-        try {
-            req.getRequestDispatcher("WEB-INF/jsp/SuccessfulRegistration.jsp").forward(req, resp);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
-    private void insertInUsers_MarksDB(User user, Marks marks){
-        Users_Marks users_marks = new Users_Marks(userDAO.getPKByName(user.getFirstName()), _marksDAO.getPKByFirstMark(marks.getMark_1()));
-        users_marksDAO.insert(users_marks);
-    }
+
 
 
 }

@@ -33,29 +33,41 @@ public class MailServlet implements CommandOriginal {
     }
 
     private void sendMessages(List<User> users) throws MessagingException, IOException {
-    final Properties properties = new Properties() ;
-    properties.put("mail.smtp.socketFactory.fallback", "true");
-    properties.load(MailServlet.class.getClassLoader().getResourceAsStream("mail.properties"));
+        try{
+            String SMTP_AUTH_USER = "vdvoreckij4@gmail.com";
+            String SMTP_AUTH_PWD = "Forester19";
 
-    List<String> userEmails = new ArrayList<>();
-    for (User user: users){
-        userEmails.add(user.getEmail());
-    }
+            List<String> userEmails = new ArrayList<>();
+            for (User user : users){
+                userEmails.add(user.getEmail());
+            }
 
-    Session session = Session.getDefaultInstance(properties);
-    MimeMessage mimeMessage = new MimeMessage(session);
-    mimeMessage.setFrom(new InternetAddress("vdvoreckij4@gmail.com"));
-        InternetAddress[] address = new InternetAddress[userEmails.size()];
-        for (int i=0; i< userEmails.size(); i++){
-            address[i] = new InternetAddress(userEmails.get(i));
+            Properties properties = new Properties();
+            properties.put("mail.transport.protocol", "smtps");
+            properties.put("mail.smtps.host", SMTP_AUTH_USER);
+            properties.put("mail.smtps.auth", "true");
+
+            Session session = Session.getDefaultInstance(properties);
+
+            Transport transport = session.getTransport();
+            transport.connect("smtp.gmail.com",465,SMTP_AUTH_USER,SMTP_AUTH_PWD);
+
+            MimeMessage mimeMessage = new MimeMessage(session);
+            mimeMessage.setSubject("Congratulation");
+            mimeMessage.setText("Congratulation");
+            mimeMessage.setFrom(new InternetAddress("vdvoreckij4@gmail.com"));
+
+            InternetAddress[] address = new InternetAddress[userEmails.size()];
+            for (int i=0; i< userEmails.size(); i++){
+                address[i] = new InternetAddress(userEmails.get(i));
+            }
+
+            mimeMessage.addRecipients(Message.RecipientType.TO, address);
+            mimeMessage.setSentDate(new Date());
+
+            transport.sendMessage(mimeMessage,mimeMessage.getRecipients(Message.RecipientType.TO));
+        }catch (MessagingException e){
+            System.out.println(e);
         }
-        mimeMessage.setRecipients(Message.RecipientType.TO, address);
-    mimeMessage.setSubject("Congratulations");
-    mimeMessage.setText("You entered to faculty. My congratulations)");
-
-    Transport tr = session.getTransport("smtps");
-    tr.connect("smtp.gmail.com",465,"vdvoreckij4@gmail.com","Forester19");
-    tr.sendMessage(mimeMessage,mimeMessage.getAllRecipients());
-    tr.close();
     }
 }

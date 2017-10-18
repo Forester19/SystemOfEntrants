@@ -3,6 +3,8 @@ package ua.company.controller;
 import org.apache.log4j.Logger;
 import ua.company.controller.command.GenericCommand.CommandOriginal;
 import ua.company.controller.command.GenericCommand.CommandProvider;
+import ua.company.model.dao.connection.JDBCConnectionPool;
+import ua.company.model.dao.connection.JDBCConnectionPoolDataSource;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,8 +16,8 @@ import java.io.IOException;
 /**
  * Created by Владислав on 25.09.2017.
  */
-@WebServlet(name = "DefaultServlet", urlPatterns = {"/controller", "/adminSignUp","/usersRegistration","/usersForm","/adminAddQuestionnaireToSheet",
-"/startBL","/MailForm"})
+@WebServlet(name = "DefaultServlet", urlPatterns = {"/controller","/usersRegistration","/usersForm","/adminAddQuestionnaireToSheet",
+"/startBL","/MailForm","/adminSignUp"})
 public class DefaultServlet extends HttpServlet {
 
     private Logger logger = Logger.getRootLogger();
@@ -37,10 +39,14 @@ public class DefaultServlet extends HttpServlet {
         String commandName = req.getParameter(COMMAND_STRING);
         if (commandName == null) {
             commandName = (String) req.getAttribute(COMMAND_STRING);
+            logger.info("Connection count: " + JDBCConnectionPoolDataSource.connectionCount);
         }
+
+
         logger.info("handling query from client:  " + commandName);
         CommandOriginal commandOriginal = commandProvider.getCommand(commandName);
         commandOriginal.execute(req, resp);
+        logger.info("Connection count: " + JDBCConnectionPoolDataSource.connectionCount);
     }
 
 }

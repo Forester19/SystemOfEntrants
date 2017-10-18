@@ -75,18 +75,23 @@ public class MarksDAO extends AbstractJDBCDao<Marks> {
     }
     public Integer getPKByFirstMark(int mark) {
         String query = "select epamproject.marks.id FROM epamproject.marks WHERE epamproject.marks.mark_1 = ?";
-        Connection connection = getConnectionFromPool();
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
         int id = 0;
         try {
-
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            connection = getConnectionFromPool();
+            preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1,mark);
-            ResultSet rs = preparedStatement.executeQuery();
-            while (rs.next()) {
-                id = rs.getInt("id");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                id = resultSet.getInt("id");
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        finally {
+            closeResources(resultSet,preparedStatement,connection);
         }
         return id;
     }
@@ -96,10 +101,11 @@ public class MarksDAO extends AbstractJDBCDao<Marks> {
         String query = "SELECT epamproject.users_marks.marks_id FROM users_marks WHERE user_id = ?";
         ResultSet rs = null;
         PreparedStatement preparedStatement = null;
-
+        Connection connection = null;
          Marks marks = null;
 
-        try(   Connection connection = getConnectionFromPool()) {
+        try{
+            connection = getConnectionFromPool();
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, userDAO.getPKByName(user.getFirstName()));
             rs = preparedStatement.executeQuery();
@@ -109,9 +115,36 @@ public class MarksDAO extends AbstractJDBCDao<Marks> {
            }
         }
         finally {
-            rs.close();
-            preparedStatement.close();
-        }
+         closeResources(rs,preparedStatement,connection);
+         }
         return marks;
+    }
+
+    /**
+     * Method which doing mapping in DB
+     * @param marks object which persist in DB
+     * @return id of object
+     */
+    public int persist(Marks marks){
+          int id = 0;
+          String sqlQuery = "select epamproject.marks.id FROM marks where mark_1 = ? AND mark_2 = ? AND marks.mark_3 = ?";
+        Connection connection = null;
+          PreparedStatement preparedStatement = null;
+          ResultSet resultSet = null;
+          try{
+              connection = getConnectionFromPool();
+              preparedStatement = connection.prepareStatement(sqlQuery);
+              preparedStatement.setInt(1, marks.getMark_1());
+              preparedStatement.setInt(2, marks.getMark_2());
+              preparedStatement.setInt(3, marks.getMark_3());
+              resultSet = preparedStatement.executeQuery();
+
+              while (resultSet.next()){
+                  id = resultSet.getInt("id");
+              }
+          } catch (SQLException e) {
+        e.printStackTrace();
+          }
+          return id;
     }
 }

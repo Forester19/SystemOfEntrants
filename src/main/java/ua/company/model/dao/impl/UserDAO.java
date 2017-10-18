@@ -83,18 +83,23 @@ public class UserDAO extends AbstractJDBCDao<User> {
 
     public Integer getPKByName(String name) {
         String query = "select epamproject.users.id FROM epamproject.users WHERE first_name = ?";
-        Connection connection = getConnectionFromPool();
+        Connection connection =null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
         int id = 0;
         try {
-
-         PreparedStatement preparedStatement = connection.prepareStatement(query);
+          connection = getConnectionFromPool();
+         preparedStatement = connection.prepareStatement(query);
          preparedStatement.setString(1,name);
-         ResultSet rs = preparedStatement.executeQuery();
-            while (rs.next()) {
-                id = rs.getInt("id");
+         resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                id = resultSet.getInt("id");
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        finally {
+            closeResources(resultSet,preparedStatement,connection);
         }
         return id;
     }
@@ -104,24 +109,24 @@ public class UserDAO extends AbstractJDBCDao<User> {
         return user;
     }
    public void addingUsersToSheetByUser(List<User> list){
-        String query = getUpdateQuery();
-        query += " noted_by_admin = 1 where id = ?";
-       PreparedStatement preparedStatement = null;
-       try(Connection connection = getConnectionFromPool()) {
-       for (User user: list) {
-           preparedStatement = connection.prepareStatement(query);
-           preparedStatement.setInt(1, getPKByName(user.getFirstName()));
-           preparedStatement.executeUpdate();
-       }}
-                catch (SQLException e) {
-                    e.printStackTrace();
-                }finally {
-           try {
-               preparedStatement.close();
-           } catch (SQLException e) {
-               e.printStackTrace();
-           }
-       }
+        String query = "UPDATE epamproject.users SET epamproject.users.noted_by_admin = 1 WHERE epamproject.users.first_name =  ?  AND epamproject.users.second_name = ?";
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        try{
+            connection = getConnectionFromPool();
+            preparedStatement  = connection.prepareStatement(query);
+            for (User user: list){
+                preparedStatement.setString(1, user.getFirstName());
+                preparedStatement.setString(2, user.getLastName());
+                preparedStatement.executeUpdate();
+            }
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            closeResources(preparedStatement,connection);
+        }
    }
    public List<User_Mark> joinTablesUsersMarks(){
        String query = "Select * from users JOIN users_marks ON users.id = users_marks.user_id JOIN marks ON users_marks.marks_id = marks.id ORDER BY (mark_1+ mark_2 + mark_3)/3 DESC ";
@@ -129,7 +134,9 @@ public class UserDAO extends AbstractJDBCDao<User> {
        List<User_Mark> list = new ArrayList<>();
        ResultSet resultSet = null;
        User_Mark user_mark = null;
-       try(Connection connection = getConnectionFromPool()) {
+       Connection connection = null;
+       try{
+           connection = getConnectionFromPool();
        preparedStatement = connection.prepareStatement(query);
        resultSet =preparedStatement.executeQuery();
        while (resultSet.next()){
@@ -146,18 +153,26 @@ public class UserDAO extends AbstractJDBCDao<User> {
        }
        } catch (SQLException e) {
            e.printStackTrace();
+       }finally {
+           closeResources(resultSet,preparedStatement,connection);
        }
        return list;
    }
 
    public void markUserAsSuccessfulEntryToFaculty(User student){
-       String query = "UPDATE  epamproject.users SET users.successful_entry = 1 ";
+       String query = "UPDATE  epamproject.users SET users.successful_entry = 1 WHERE users.first_name = ? ";
+       Connection connection = null;
        PreparedStatement preparedStatement = null;
-       try(Connection connection = getConnectionFromPool()) {
+       try{
+           connection = getConnectionFromPool();
          preparedStatement = connection.prepareStatement(query);
+         preparedStatement.setString(1,student.getFirstName());
          preparedStatement.executeUpdate();
        } catch (SQLException e) {
            e.printStackTrace();
+       }
+       finally {
+           closeResources(preparedStatement,connection);
        }
    }
    public List<User> getStudents(){
@@ -166,7 +181,9 @@ public class UserDAO extends AbstractJDBCDao<User> {
        PreparedStatement preparedStatement = null;
        ResultSet resultSet = null;
        List<User> users = new ArrayList<>();
-       try(Connection connection = getConnectionFromPool()) {
+       Connection connection = null;
+       try{
+           connection = getConnectionFromPool();
          preparedStatement = connection.prepareStatement(query);
          resultSet = preparedStatement.executeQuery();
        users = parseResultSet(resultSet);
@@ -174,14 +191,10 @@ public class UserDAO extends AbstractJDBCDao<User> {
        catch (SQLException e) {
            e.printStackTrace();
        }finally {
-           try {
-               resultSet.close();
-               preparedStatement.close();
-           } catch (SQLException e) {
-               e.printStackTrace();
-           }
+           closeResources(resultSet,preparedStatement,connection);
        }
        return users;
    }
+
 
 }

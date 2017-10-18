@@ -3,7 +3,7 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="ua.company.model.entity.Faculty" %>
 <%@ page import="ua.company.model.entity.additional.ModelOfUserForShow" %>
-<%@ page import="ua.company.bl.view.ShowUsersInfo" %>
+<%@ page import="ua.company.bl.tags.ShowUsersInfo" %>
 <%@ page import="ua.company.model.dao.impl.UserDAO" %>
 
 
@@ -11,7 +11,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<jsp:useBean id="information" class="ua.company.bl.view.ShowUsersInfo"/>
+<jsp:useBean id="information" class="ua.company.bl.tags.ShowUsersInfo"/>
 <html>
 <head>
     <title>Admin Page</title>
@@ -20,6 +20,9 @@
    Hello admin  ${admin} its your page.
    <br/>
    <hr/>
+
+
+
 <form action="startBL" method="get">
     <input type="hidden" name="command" value="START_BL">
     <input type="submit" name="startBL" value="Start BL">
@@ -53,8 +56,7 @@
     <th>Scope_2</th>
     <th>Scope_3</th>
     </tr>
-           <%
-               UserDAO userDAO = new UserDAO();
+           <%UserDAO userDAO = new UserDAO();
             ShowUsersInfo showUsersInfo = new ShowUsersInfo();
             List<ModelOfUserForShow> modelOfUserForShow = showUsersInfo.showInfo(); %>
         <% for (ModelOfUserForShow modelOfUserForShow1 : modelOfUserForShow){

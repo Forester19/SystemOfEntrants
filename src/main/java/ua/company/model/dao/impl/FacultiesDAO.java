@@ -103,7 +103,9 @@ public class FacultiesDAO extends AbstractJDBCDao<Faculty> {
 
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
-        try (Connection connection = getConnectionFromPool()) {
+        Connection connection = null;
+        try {
+            connection = getConnectionFromPool();
             preparedStatement = connection.prepareStatement(query);
             rs = preparedStatement.executeQuery();
             Subject subject;
@@ -114,8 +116,7 @@ public class FacultiesDAO extends AbstractJDBCDao<Faculty> {
                 list.add(subject);
             }
         } finally {
-            rs.close();
-            preparedStatement.close();
+         closeResources(rs,preparedStatement,connection);
         }
         return list;
 

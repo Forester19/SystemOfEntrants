@@ -7,7 +7,7 @@
     <uri>/WEB-INF/tdl/ShowTag</uri>
     <tag>
         <name>ShowStudentsTag</name>
-        <tag-class>ua.company.bl.view.TagForShow</tag-class>
+        <tag-class>ua.company.bl.tags.TagForShow</tag-class>
         <body-content>empty</body-content>
     </tag>
 </taglib>

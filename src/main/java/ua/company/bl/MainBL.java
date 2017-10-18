@@ -32,7 +32,8 @@ public class MainBL {
             List<User_Mark> listUserMark = map.get(faculty);
             List<User> listUser = new ArrayList<>();
             for (User_Mark user_mark: listUserMark){
-                listUser.add(userDAO.getUserByName(user_mark.getFirstName()));
+                User user = userDAO.getUserByName(user_mark.getFirstName());
+                listUser.add(user);
             }
             for (User user : listUser){
                 userDAO.markUserAsSuccessfulEntryToFaculty(user);
@@ -42,10 +43,6 @@ public class MainBL {
         return newMap;
     }
 
-
-    public Map<Faculty, List<User_Mark>> getUsersWhichSuccessfulEntry(){
-        return separateUsersToSuccessfulEntry();
-    }
 
     private Map<Faculty, List<User_Mark>> separateUsersToSuccessfulEntry(){
         Map<Faculty,List<User_Mark>> abiturients = doMappingForBL();

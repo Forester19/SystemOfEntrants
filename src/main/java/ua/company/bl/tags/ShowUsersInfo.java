@@ -1,4 +1,4 @@
-package ua.company.bl.view;
+package ua.company.bl.tags;
 
 import ua.company.bl.MainBL;
 import ua.company.model.dao.impl.FacultiesDAO;
@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Владислав on 02.10.2017.
  */
 public class ShowUsersInfo {
-    private MainBL mainBL = new MainBL();
+
     private UserDAO userDAO = new UserDAO();
     private MarksDAO marksDAO = new MarksDAO();
     private FacultiesDAO facultiesDAO = new FacultiesDAO();

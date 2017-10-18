@@ -20,7 +20,7 @@ public class AddingUserToSheet implements CommandOriginal {
     @Override
     public void execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws ServletException, IOException {
      List<User> list = executionOfInformation(httpRequest,httpResponse);
-     userDAO.addingUsersToSheetByUser(list);
+        userDAO.addingUsersToSheetByUser(list);
      httpRequest.getRequestDispatcher("WEB-INF/jsp/AdminPage.jsp").forward(httpRequest,httpResponse);
 
 

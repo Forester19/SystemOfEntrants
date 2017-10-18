@@ -2,6 +2,7 @@ package ua.company.model.dao.genericDAO;
 
 import org.apache.log4j.Logger;
 import ua.company.model.dao.connection.JDBCConnectionPool;
+import ua.company.model.dao.connection.JDBCConnectionPoolDataSource;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,7 +17,7 @@ import java.util.List;
  */
 public abstract class AbstractJDBCDao<T> implements GenericDAO<T> {
     private Logger logger = Logger.getRootLogger();
-    private JDBCConnectionPool jdbcConnectionPool;
+    JDBCConnectionPool jdbcConnectionPool = JDBCConnectionPool.getInstanceConnectionPool();
 
 
     /**
@@ -54,16 +55,22 @@ public abstract class AbstractJDBCDao<T> implements GenericDAO<T> {
 
     @Override
     public void insert(T object) {
-        Connection connection = getConnectionFromPool();
         String query = getInsertQuery();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            prepareStatemantForInsert(preparedStatement,object);
+        Connection connection = null;
+       PreparedStatement preparedStatement = null;
+        try{
+            connection = getConnectionFromPool();
+            preparedStatement = connection.prepareStatement(query);
+            prepareStatemantForInsert(preparedStatement, object);
             preparedStatement.executeUpdate();
-            logger.info("Insert into db new object "+ object.toString());
+            logger.info("Insert into db new object " + object.toString());
 
         } catch (SQLException e) {
             e.printStackTrace();
-            logger.error("error in inserting of object" + e );
+            logger.error("error in inserting of object" + e);
+        }
+        finally {
+            closeResources(preparedStatement,connection);
         }
     }
 
@@ -71,42 +78,55 @@ public abstract class AbstractJDBCDao<T> implements GenericDAO<T> {
 
     @Override
     public T getById(int key) {
-        Connection connection = getConnectionFromPool();
         List<T> list = null;
         String sql_query = getSelectQuery();
         sql_query += " where id = ? ";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql_query)) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = getConnectionFromPool();
+            preparedStatement = connection.prepareStatement(sql_query);
             preparedStatement.setInt(1, key);
-            ResultSet rs = preparedStatement.executeQuery();
-            list = parseResultSet(rs);
+            resultSet = preparedStatement.executeQuery();
+            list = parseResultSet(resultSet);
+
+            if (list == null) return null;
+            if (list.size() > 1) return null;
         } catch (SQLException e) {
             e.printStackTrace();
             logger.error("Cant search admin by Id " + key);
         }
-
-        if (list == null) return null;
-        if (list.size() > 1) return null;
+        finally {
+        closeResources(resultSet,preparedStatement,connection);
+        }
         return list.iterator().next();
     }
 
     @Override
-    public void update(T object){
+    public void update(T object) {
 
-    };
+    }
 
 
     public List<T> getAll() {
-        Connection connection = getConnectionFromPool();
         List<T> list = null;
         String sql = getSelectQuery();
+        Connection connection= null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            ResultSet rs = preparedStatement.executeQuery();
-            list = parseResultSet(rs);
+            connection = getConnectionFromPool();
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            list = parseResultSet(resultSet);
 
         } catch (SQLException e) {
             e.printStackTrace();
             logger.error("Cant get all admins " + e);
+        }
+        finally {
+            closeResources(resultSet,preparedStatement,connection);
         }
         return list;
     }
@@ -118,25 +138,63 @@ public abstract class AbstractJDBCDao<T> implements GenericDAO<T> {
      * @return
      */
     public void delete(T object) {
-        Connection connection = getConnectionFromPool();
-        String sql = getDeleteQuery();
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.executeQuery();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        Connection connection = null;
+        try {
+            connection = getConnectionFromPool();
+            String sql = getDeleteQuery();
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.executeQuery();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     protected Connection getConnectionFromPool() {
-        Connection connection;
-        jdbcConnectionPool = JDBCConnectionPool.getInstanceConnectionPool();
+        Connection connection = null;
+
         connection = jdbcConnectionPool.getConnection();
+        logger.info("created connection: " + connection.toString());
+         jdbcConnectionPool.freeConnection(connection);
         if (connection == null) {
             System.out.println("Cant recieve connection");
         }
-        jdbcConnectionPool.freeConnection(connection);
-    return connection;
+
+        return connection;
+    }
+      protected void closeResources(ResultSet resultSet, PreparedStatement preparedStatement, Connection connection){
+          try {
+              if(resultSet != null){
+                  resultSet.close();
+              }
+              if (preparedStatement != null) {
+                  preparedStatement.close();
+              }
+              if (connection !=null) {
+                  connection.close();
+              }
+          } catch (SQLException e) {
+              e.printStackTrace();
+          }
+      }
+      protected void closeResources(PreparedStatement preparedStatement, Connection connection){
+        try {
+            if (preparedStatement !=null) {
+                preparedStatement.close();
+            }
+            if (connection != null) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

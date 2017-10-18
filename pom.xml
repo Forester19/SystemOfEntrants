@@ -83,6 +83,14 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-dbcp -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>8.5.16</version>
+        </dependency>
+
+
     </dependencies>
 
 

@@ -70,11 +70,9 @@
         <td>Subject 2</td>
         <td>Subject 3</td>
     </tr>
-
-
     <%    for (FacultyAndSubjects facultyAndSubjects: faculties.showFacultetsAndSubjects()){       %>
         <tr>
-            <td> <%= facultyAndSubjects.getFaculty()%></td>
+            <td> <%= facultyAndSubjects.getFaculty().getName()%></td>
             <td> <%= facultyAndSubjects.getSubject1().getSubjectTitle()%></td>
             <td> <%= facultyAndSubjects.getSubject2().getSubjectTitle()%></td>
             <td> <%= facultyAndSubjects.getSubject3().getSubjectTitle()%></td>
