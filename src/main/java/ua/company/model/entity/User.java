@@ -1,44 +1,57 @@
 package ua.company.model.entity;
 
 /**
- * Created by Владислав on 11.09.2017.
+ * Created by Владислав on 28.10.2017.
  */
-public class User implements Identified<Integer>{
-
+public class User {
     private int id;
     private String firstName;
-    private String lastName;
+    private String secondName;
     private String email;
-    private int faculty_id;
-    private boolean noted_by_admin;
-    private boolean successful_entry;
+    private int faciltetId;
+    private boolean markedByAdmin;
+    private boolean successfulEntry;
+    private int role;
 
-
-    public User(int id, String firstName, String lastName, String email, int faculty_id, boolean noted_by_admin, boolean successful_entry) {
+    public User(int id, String firstName, String secondName, String email, int faciltetId, boolean markedByAdmin, boolean successfulEntry, int role) {
         this.id = id;
         this.firstName = firstName;
-        this.lastName = lastName;
+        this.secondName = secondName;
         this.email = email;
-        this.faculty_id = faculty_id;
-       this.noted_by_admin = noted_by_admin;
-        this.successful_entry = successful_entry;
-    }
-
-    public User(String firstName, String lastName, String email, int faculty_id, boolean noted_by_admin, boolean successful_entry) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.faculty_id = faculty_id;
-        this.noted_by_admin = noted_by_admin;
-        this.successful_entry = successful_entry;
+        this.faciltetId = faciltetId;
+        this.markedByAdmin = markedByAdmin;
+        this.successfulEntry = successfulEntry;
+        this.role = role;
     }
 
     public User() {
     }
 
-    @Override
-    public Integer getPK() {
+    public User(int id, String firstName, String secondName, String email, int faciltetId, boolean markedByAdmin, boolean successfulEntry) {
+        this.id = id;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.email = email;
+        this.faciltetId = faciltetId;
+        this.markedByAdmin = markedByAdmin;
+        this.successfulEntry = successfulEntry;
+    }
+
+    public User(String firstName, String secondName, String email, int faciltetId, boolean markedByAdmin, boolean successfulEntry) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.email = email;
+        this.faciltetId = faciltetId;
+        this.markedByAdmin = markedByAdmin;
+        this.successfulEntry = successfulEntry;
+    }
+
+    public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -49,63 +62,65 @@ public class User implements Identified<Integer>{
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getSecondName() {
+        return secondName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
 
     public String getEmail() {
         return email;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        return email.equals(user.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return email.hashCode();
-    }
-
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public int getFaculty_id() {
-        return faculty_id;
+    public int getFaciltetId() {
+        return faciltetId;
     }
 
-    public void setFaculty_id(int faculty_id) {
-        this.faculty_id = faculty_id;
+    public void setFaciltetId(int faciltetId) {
+        this.faciltetId = faciltetId;
     }
 
-    public boolean isNoted_by_admin() {
-        return noted_by_admin;
+    public boolean isMarkedByAdmin() {
+        return markedByAdmin;
     }
 
-    public void setNoted_by_admin(boolean noted_by_admin) {
-        this.noted_by_admin = noted_by_admin;
+    public void setMarkedByAdmin(boolean markedByAdmin) {
+        this.markedByAdmin = markedByAdmin;
     }
 
-    public boolean isSuccessful_entry() {
-        return successful_entry;
+    public boolean isSuccessfulEntry() {
+        return successfulEntry;
     }
 
-    public void setSuccessful_entry(boolean successful_entry) {
-        this.successful_entry = successful_entry;
+    public void setSuccessfulEntry(boolean successfulEntry) {
+        this.successfulEntry = successfulEntry;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 
     @Override
     public String toString() {
-        return id +" " + firstName + " " + lastName + " "+email +" " +faculty_id;
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", email='" + email + '\'' +
+                ", faciltetId=" + faciltetId +
+                ", markedByAdmin=" + markedByAdmin +
+                ", successfulEntry=" + successfulEntry +
+                ", role=" + role +
+                '}';
     }
 }

@@ -1,7 +1,7 @@
 package ua.company.model.dao.impl;
 
 import ua.company.model.dao.genericDAO.AbstractJDBCDao;
-import ua.company.model.entity.Users_Marks;
+import ua.company.model.entity.UserAutentif;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,12 +9,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Created by Владислав on 02.10.2017.
+ * Created by Владислав on 25.10.2017.
  */
-public class Users_MarksDAO extends AbstractJDBCDao<Users_Marks> {
+public class UserAutentifDAO extends AbstractJDBCDao<UserAutentif> {
     @Override
     public String getSelectQuery() {
-        return "select * from epamproject.users_marks";
+        return null;
     }
 
     @Override
@@ -34,27 +34,31 @@ public class Users_MarksDAO extends AbstractJDBCDao<Users_Marks> {
 
     @Override
     public String getInsertQuery() {
-        return "insert into epamproject.users_marks(user_id,marks_id) values(?,?)";
+        return "insert into epamproject.userautentif values(?,?,?,?)";
     }
 
     @Override
-    protected List<Users_Marks> parseResultSet(ResultSet rs) {
+    protected List<UserAutentif> parseResultSet(ResultSet rs) {
         return null;
     }
 
     @Override
-    protected void prepareStatemantForInsert(PreparedStatement statement, Users_Marks object) {
+    protected void prepareStatemantForInsert(PreparedStatement statement, UserAutentif object) {
         try {
-            statement.setInt(1,object.getUser_id());
-            statement.setInt(2,object.getMarks_id());
+            statement.setString(1,null);
+            statement.setString(2,object.getLogin());
+            statement.setString(3,object.getPassword());
+            statement.setString(4,null);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    protected void prepareStatemantForDelete(PreparedStatement statement, Users_Marks object) {
+    protected void prepareStatemantForDelete(PreparedStatement statement, UserAutentif object) {
 
     }
+    protected void search(){
 
+    }
 }

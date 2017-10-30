@@ -13,12 +13,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <properties>
+    <org.apache.tomcat.version>9.0.0.M26</org.apache.tomcat.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -45,7 +50,7 @@
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jdbc</artifactId>
-            <version>9.0.0.M26</version>
+            <version>${org.apache.tomcat.version}</version>
         </dependency>
 
         <dependency>
@@ -87,7 +92,7 @@
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-dbcp</artifactId>
-            <version>8.5.16</version>
+            <version>${org.apache.tomcat.version}</version>
         </dependency>
 
 

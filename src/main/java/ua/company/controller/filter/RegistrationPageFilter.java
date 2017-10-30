@@ -31,11 +31,14 @@ public class RegistrationPageFilter implements Filter {
                     + ", URL =" + req.getRequestURL());
 
             filterChain.doFilter(servletRequest, servletResponse);
-        }
-        if (url[1].equals("/adminSignUp")) {
+        }else if (url[1].equals("/adminSignUp")) {
 
             logger.info("Admin verified");
 
+            filterChain.doFilter(servletRequest, servletResponse);
+
+        }
+        else {
             filterChain.doFilter(servletRequest, servletResponse);
 
         }

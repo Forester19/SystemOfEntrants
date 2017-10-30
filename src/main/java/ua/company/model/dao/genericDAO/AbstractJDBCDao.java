@@ -17,7 +17,7 @@ import java.util.List;
  */
 public abstract class AbstractJDBCDao<T> implements GenericDAO<T> {
     private Logger logger = Logger.getRootLogger();
-    JDBCConnectionPool jdbcConnectionPool = JDBCConnectionPool.getInstanceConnectionPool();
+    private JDBCConnectionPool jdbcConnectionPool = JDBCConnectionPool.getInstanceConnectionPool();
 
 
     /**

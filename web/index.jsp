@@ -1,72 +1,75 @@
 <%--
   Created by IntelliJ IDEA.
   User: Владислав
-  Date: 03.09.2017
-  Time: 7:20
+  Date: 23.10.2017
+  Time: 13:31
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-
 <html>
-  <head>
-    <title>Hello Welcome!!!</title>
+<head>
+    <title>MainPage</title>
+    <link rel="stylesheet" type="text/css" href="css/mainPage.css">
+</head>
+<body>
+<div id="container_demo" >
+    <!-- спрятанный якорь, чтобы избежать прыжков http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+    <a class="hiddenanchor" id="tosubscribe"></a>
+    <a class="hiddenanchor" id="tologin"></a>
+    <div id="wrapper">
+        <div id="login" class="animate form">
+            <form  action="authorization" method="get" autocomplete="on">
+                <h1>Log in</h1>
+                <input type="hidden" name ="command" value="REG_BY_USER">
+                <p>
+                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
+                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                </p>
+                <p>
+                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+                </p>
+                <p class="keeplogin">
+                    <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+                    <label for="loginkeeping">Keep me logged in</label>
+                </p>
+                <p class="login button">
+                    <input type="submit" value="Login" />
+                </p>
+                <p class="change_link">
+                    Not a member yet ?
+                    <a href="#tosubscribe" class="to_subscribe">Join us</a>
+                </p>
+            </form>
+        </div>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <div id="subscribe" class="animate form">
+            <form  action="registration" method="post" autocomplete="on">
+                <h1> Sign up </h1>
+                <input type="hidden" name ="command" value="REG_BY_USER">
+                <p>
+                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                </p>
 
-    <link rel="stylesheet" href="WEB-INF/css/style.css">
-    <link rel="icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">
-
-    <script>
-      function readInputs(){
-          if(document.forms[0].elements[0].value ==""){
-              alert("Null fields (login or password)")
-              return false;
-          } else{
-              alert("Identificated))")
-              return true;}}
-    </script>
-
-  </head>
-  <body bgcolor="#a9a9a9">
-
-  <marquee behavior="alternate" direction="right"><h1>Welcome in the best system of entrants!!! </h1></marquee>
-  <hr/>
-  <br/>
-  <p align="center" style="color:#3f41ff; font-size:30px">If you first time here...</p>
-
-
-  <form action="usersRegistration" method="get">
-    <input type="hidden" name="command" value="REG_BY_USER">
-  <input type="submit" value="Registration for enrollee..."/>
-  </form>
-
-  <hr/>
-  <br/>
-  <p align="center" style="color:#3f41ff; font-size:30px">If you admin...</p>
-
-
-  <form onsubmit="readInputs()" action="adminSignUp" method="post" class="login">
-    <input type="hidden" name="command" value="ADMINS_SIGN_UP">
-    <p>
-      <label for="login">Логин:</label>
-      <input type="text" name="login" id="login" value="name@example.com">
-    </p>
-    <p>
-      <label for="password">Пароль:</label>
-      <input type="password" name="password" id="password" value="4815162342">
-    </p>
-    <p class="login-submit">
-      <button type="submit" class="login-button">Войти</button>
-    </p>
-
-    <p align="center" class="forgot-password"><a href="registrationPage.html">Забыл пароль?</a></p>
-
-
-  </form>
-
-
-  </body>
+                <p>
+                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                </p>
+                <p>
+                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                </p>
+                <p class="signin button">
+                    <input type="submit" value="Sign up"/>
+                </p>
+                <p class="change_link">
+                    Already a member ?
+                    <a href="#tologin" class="to_subscribe"> Go and log in </a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
 </html>
